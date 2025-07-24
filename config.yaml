@@ -1,0 +1,28 @@
+server:
+  port: "8080"
+  host: "localhost"
+
+database:
+  driver: "mysql"
+  host: "localhost"
+  port: "3306"
+  username: "root"
+  password: ""
+  database: "go_bsae_project_db"
+  ssl_mode: "disable"
+
+redis:
+  host: "localhost"
+  port: "6379"
+  password: ""
+  db: 0
+
+grpc:
+  port: "9090"
+
+jwt:
+  secret: "jKehiyzsvhyEqNAlzKTC_1BsRpgsDuDSaMzrep_GfJI"
+  expire: 24
+
+log:
+  level: "info"
