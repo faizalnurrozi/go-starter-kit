@@ -1,5 +1,5 @@
 ## README.md
-```markdown
+
 # Go Base Project
 
 Robust Go application with Fiber framework implementing clean architecture and SOLID principles.
@@ -24,8 +24,8 @@ Robust Go application with Fiber framework implementing clean architecture and S
 
 ```
 project/
-├── cmd/server/           # Application entry point
-├── internal/             # Private application code
+├── cmd/server/          # Application entry point
+├── internal/            # Private application code
 │   ├── config/          # Configuration management
 │   ├── database/        # Database connection and migration
 │   ├── cache/           # Redis cache implementation
@@ -41,8 +41,8 @@ project/
 │   └── utils/           # Utility functions
 ├── proto/               # gRPC protocol definitions
 ├── tests/               # Test files
-│   ├── unit/           # Unit tests
-│   └── integration/    # Integration tests
+│   ├── unit/            # Unit tests
+│   └── integration/     # Integration tests
 ├── migrations/          # Database migrations
 ├── pkg/                 # Public packages
 └── configs/             # Configuration files
@@ -358,4 +358,3 @@ For support and questions:
 - gRPC support
 - Docker support
 - Comprehensive testing
-```# Go Base Project Structure

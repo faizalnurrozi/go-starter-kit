@@ -6,6 +6,7 @@ import (
 
 	dto "github.com/faizalnurrozi/go-starter-kit/internal/dto/request"
 	"github.com/faizalnurrozi/go-starter-kit/internal/entity"
+	"github.com/faizalnurrozi/go-starter-kit/internal/logger"
 	serviceimpl "github.com/faizalnurrozi/go-starter-kit/internal/service/impl"
 
 	"github.com/stretchr/testify/assert"
@@ -56,6 +57,7 @@ func (m *MockUserRepository) Count(ctx context.Context) (int64, error) {
 }
 
 func TestUserService_Create_Success(t *testing.T) {
+	logger.Init("info")
 	mockRepo := new(MockUserRepository)
 	userService := serviceimpl.NewUserService(mockRepo, nil)
 
@@ -82,6 +84,7 @@ func TestUserService_Create_Success(t *testing.T) {
 }
 
 func TestUserService_Create_EmailExists(t *testing.T) {
+	logger.Init("info")
 	mockRepo := new(MockUserRepository)
 	userService := serviceimpl.NewUserService(mockRepo, nil)
 

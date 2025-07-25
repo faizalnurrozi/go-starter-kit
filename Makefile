@@ -14,7 +14,7 @@ test:
 
 # Run tests with coverage
 test-coverage:
-	go test -v -coverprofile=coverage.out ./tests/...
+	go test -v -coverprofile=coverage.out ./...
 	go tool cover -html=coverage.out
 
 # Clean build files
