@@ -7,6 +7,7 @@ import (
 	"github.com/faizalnurrozi/go-starter-kit/internal/config"
 	"github.com/faizalnurrozi/go-starter-kit/internal/errors"
 	"github.com/faizalnurrozi/go-starter-kit/internal/utils"
+	"github.com/google/uuid"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"
@@ -35,7 +36,10 @@ func Auth() fiber.Handler {
 		}
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok {
+			uuid := uuid.New()
+			c.Locals("event_id", uuid.String())
 			c.Locals("user_id", claims["user_id"])
+			c.Locals("actor", claims["email"])
 			c.Locals("email", claims["email"])
 		}
 
