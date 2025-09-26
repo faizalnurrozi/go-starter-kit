@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"os"
 	"time"
 
 	"github.com/faizalnurrozi/go-starter-kit/internal/logger"
@@ -17,17 +16,16 @@ func Logger() fiber.Handler {
 		latency := time.Since(start)
 
 		logger.InfoStructured("Publish event", "event", map[string]any{
-			"event_id":         c.Locals("event_id"), // pastikan kamu inject dulu di ctx
+			"event_id":         c.Locals("event_id"),
 			"ip_source":        c.IP(),
-			"actor":            c.Locals("actor"), // bisa diisi dari JWT atau ctx
+			"actor":            c.Locals("actor"),
 			"api_name":         c.OriginalURL(),
-			"url":              c.OriginalURL(), // atau full URL jika tersedia
+			"url":              c.OriginalURL(),
 			"access_time":      start.Format("2006-01-02 15:04:05"),
 			"http_status_code": c.Response().StatusCode(),
-			"error_code":       "00",      // hardcoded, sesuaikan dengan err handler
-			"error_message":    "Success", // sesuaikan juga
+			"error_code":       "00",
+			"error_message":    "Success",
 			"elapsed_time":     float64(latency.Microseconds()) / 1000.0,
-			"pid":              os.Getpid(),
 		})
 
 		/* logger.WithFields(logrus.Fields{
